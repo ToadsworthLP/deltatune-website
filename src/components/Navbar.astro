@@ -1,0 +1,101 @@
+---
+import Image from "astro/components/Image.astro";
+import NavbarMenuIcon from "../assets/menu.png";
+---
+
+<div class="navbar">
+    <a class="navbar-link" href="index.html">Home</a>
+    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<div id="toggleable-nav" class="navbar-mobile" style="display: none">
+    <a class="navbar-link" href="index.html">Home</a>
+    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
+</div>
+<Image src={NavbarMenuIcon} alt="Test" class="nav-menu-icon" id="nav-toggle" format="png"/>
+<style>
+    .navbar {
+        position: fixed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        background: black;
+    }
+
+    .navbar-link {
+        color: rgb(128, 128, 128);
+
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .navbar-link:hover {
+        color: white;
+    }
+
+    .navbar-mobile {
+        display: none;
+        position: fixed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        justify-content: space-evenly;
+        background: black;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu-icon {
+        display: none;
+        position: fixed;
+
+        width: 10vw;
+        height: auto;
+        margin: 10px;
+        image-rendering: pixelated;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .navbar {
+            display: none;
+        }
+
+        .navbar-link {
+            font-size: 2rem;
+            color: white;
+            padding: 10px;
+        }
+
+        .nav-menu-icon {
+            display: revert;
+        }
+
+        .navbar-mobile {
+            display: flex;
+        }
+    }
+</style>
+<script>
+    const NavbarToggle = document.getElementById("nav-toggle");
+    const ToggleableNavbar  = document.getElementById("toggleable-nav");
+
+    let navbarVisible = false;
+
+    window.onload = (event) => {
+        if(NavbarToggle == null || ToggleableNavbar == null) return;
+        
+        NavbarToggle.onclick = (event) => {
+            if(navbarVisible) {
+                ToggleableNavbar.style = "display: none;";
+            } else {
+                ToggleableNavbar.style = "";
+            }
+
+            navbarVisible = !navbarVisible;
+        }
+    };
+</script>

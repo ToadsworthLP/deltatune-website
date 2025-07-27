@@ -1,11 +1,303 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Image from 'astro/components/Image.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LogoImage from "../assets/deltatune-logo.png";
+import HeroBackgroundImage from "../assets/hero-background.png";
 ---
-
 <Layout>
-	<Welcome />
+	<div class="hero">
+		<Image src={HeroBackgroundImage} class="hero-background" alt="The DeltaTune logo" format="png"/>
+		<div class="hero-content-container">
+			<div class="align-images">
+				<Image src={LogoImage} class="logo" alt="The DeltaTune logo" format="png"/>
+			</div>
+			<div class="description-text">
+				Showing you what's currently playing, just like that one time DELTARUNE did it!
+			</div>
+			<div class="download-container-container">
+				<div class="download-container">
+					<a href="/releases/DeltaTune-1.0.0.zip">
+						<div class="download-button">
+							DOWNLOAD
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="download-extra-text">
+				Current version: 1.0.0 (released 7/27/2025)
+			</div>
+			<div class="download-extra-text">
+				Requires .NET Framework 4.8 (normally preinstalled with Windows)
+			</div>
+			<div class="download-extra-text">
+				Source code available on <a href="https://github.com/ToadsworthLP/deltatune" target="_blank" rel="noopener noreferrer">GitHub</a>!
+			</div>
+			<div class="more-info-text">
+				(Scroll down for more information)
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="info-container">
+			<h1>- WHAT? -</h1>
+			<p>
+				DeltaTune is a small Windows program that shows you the title and artist or whatever song you're currently listening to on your computer in a similar fashion
+				to that one time DELTARUNE did it in chapter 1 when Field of Hopes and Dreams started playing.
+			</p>
+			<p>
+				You can change the size, move it to a different corner of the screen and access some more customization options by right-clicking the DeltaTune icon in your system tray.
+				Want to hide the artist name so it looks more like the original? Want to see if the song is playing or paused? Want it to remain on screen instead of fading out on its own?
+				You'll find options to do that in there, too.
+			</p>
+			<h1>- SETUP -</h1>
+			<ol>
+				<li>Download the ZIP archive using the link above</li>
+				<li>Extract its contents to any folder</li>
+				<li>Run DeltaTune.exe (or just DeltaTune if your file browser hides file extensions)</li>
+			</ol>
+			<h1>- FAQ -</h1>
+			<div class="faq-question">
+				Q: Windows gives me a scary looking warning and won't let me run it? What's up with that?
+			</div>
+			<div class="faq-answer">
+				A: It just says that not many people have run it before and that the code is unsigned.
+				There should be a link somewhere saying something like "More info" which causes a "Run anyway" button to appear somewhere at the bottom of the warning screen.
+			</div>
+			<div class="faq-question">
+				Q: How do I make the text bigger/smaller? How do I move it?
+			</div>
+			<div class="faq-answer">
+				A: Right-click the DeltaTune icon in your system tray to open the settings menu.
+				You might need to click the little arrow on the right side of your taskbar to see it.
+			</div>
+			<div class="faq-question">
+				Q: It doesn't work!
+			</div>
+			<div class="faq-answer">
+				A: Not a question, but there's a chance it's already running!
+				If no music is currently playing, nothing will be displayed apart from the system tray icon.
+			</div>
+			<div class="faq-question">
+				Q: It still doesn't work!
+			</div>
+			<div class="faq-answer">
+				A: There's a decent chance you don't have .NET Framework 4.8 installed.
+				It should be coming bundled with Windows, but downloading it from
+				<a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48" target="_blank" rel="noopener noreferrer">Microsoft's download page over here</a>
+				should fix it (you just need the runtime, NOT the developer pack).
+			</div>
+			<div class="faq-question">
+				Q: The application crashes or behaves in a weird way!
+			</div>
+			<div class="faq-answer">
+				A: You might've found a bug! Please contact me on Twitter (@Toastworth_) or Discord (toastworth) so I can fix it.
+			</div>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	a {
+		color: white;
+	}
+
+	h1 {
+		font-weight: normal;
+		text-align: center;
+		margin-top: 6rem;
+	}
+
+	h2 {
+		font-weight: normal;
+	}
+
+	ul {
+		list-style-type: square;
+	}
+
+	.hero {
+		padding-top: 7rem;
+		padding-bottom: 7rem;
+	}
+	
+	.hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+		overflow: hidden;
+		image-rendering: pixelated;
+		z-index: -1;
+		filter: brightness(40%) blur(16px);
+	}
+
+	.icon {
+		width: 13.88888889%;
+		margin-bottom: 2.5vh;
+		image-rendering: pixelated;
+	}
+
+	.title {
+		width: 50%;
+		margin-bottom: 2.5vh;
+		image-rendering: pixelated;
+	}
+
+	.logo {
+		width: 50%;
+		height: auto;
+		margin-bottom: 5vh;
+		image-rendering: pixelated;
+	}
+
+	.description-text {
+		text-align: center;
+		margin-bottom: 10vh;
+		margin-top: 1vh;
+		font-size: 2rem;
+	}
+
+	.align-images {
+		text-align: center;
+	}
+
+	.download-container-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1vh;
+		margin-top: 12rem;
+	}
+
+	.download-container {
+		width: 40%;
+	}
+
+	.character-icon-container {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.character-icon {
+		width: 5%;
+		margin-left: 0.2vw;
+		margin-right: 0.2vw;
+		image-rendering: pixelated;
+	}
+
+	.download-button {
+		padding: 10px;
+		border-style: solid;
+		border-width: 5px;
+		border-color: white;
+		font-size: 3.5rem;
+		text-align: center;
+		background-color: black;
+	}
+
+	.download-container a {
+		text-decoration: none;
+	}
+
+	.download-extra-text {
+		font-size: 1.5rem;
+		text-align: center;
+		color: rgb(128, 128, 128);
+
+		margin-bottom: 0.5vh;
+	}
+
+	.download-extra-text a {
+		color: rgb(128, 128, 128);
+	}
+
+	.yellow-text {
+		color: rgb(255, 255, 0);
+	}
+
+	.more-info-text {
+		margin-top: 4vw;
+
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.content {
+		background-color: black;
+	}
+
+	.info-container {
+		margin: auto;
+		padding-top: 1rem;
+		width: 50%;
+		font-size:  2rem;
+	}
+
+	.text-page-content {
+		margin: auto;
+		padding-top: 2%;
+		width: 50%;
+		font-size:  2rem;
+	}
+
+	.faq-question {
+		margin-bottom: 10px;
+	}
+
+	.faq-answer {
+		margin-bottom: 30px;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.title {
+			width: 100%;
+		}
+
+		.logo {
+			width: 95%;
+		}
+		
+		.hero-content-container {
+			width: 90%;
+			margin: auto;
+		}
+
+		.download-container-container {
+			margin-top: 6rem;
+		}
+
+		.download-container {
+			width: 80%;
+		}
+
+		.character-icon {
+			width: 10%;
+		}
+
+		.content {
+			width: 100%;
+			margin: auto;
+		}
+
+		.text-page-content {
+			width: 90%;
+			font-size: 1.5rem;
+		}
+
+		.info-container {
+			width: 90%;
+			font-size: 1.5rem;
+		}
+
+		.description-text {
+			font-size: 1.5rem;
+			margin-left: 2rem;
+			margin-right: 2rem;
+			margin-bottom: 0;
+		}
+	}
+</style>

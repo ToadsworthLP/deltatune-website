@@ -1,0 +1,31 @@
+---
+import Image from "astro/components/Image.astro";
+import soulImage from "../assets/soul.png";
+---
+
+<div class="footer">
+    <div>
+        Made with <Image src={soulImage} alt="The red soul sprite from UNDERTALE/DELTARUNE" class="footer-soul-icon" format="png"/> by Toastworth
+    </div>
+    <div>
+        DELTARUNE was created by Toby Fox.
+    </div>
+    <div>
+        Not affiliated with or endorsed by Toby Fox.
+    </div>
+</div>
+<style>
+    .footer {
+        margin-top: 8vh;
+        margin-bottom: 2vw;
+        color: rgb(128, 128, 128);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-soul-icon {
+        width: 0.8rem;
+        height: 0.8rem;
+        image-rendering: pixelated;
+    }
+</style>
