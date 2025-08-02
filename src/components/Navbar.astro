@@ -2,16 +2,13 @@
 import Image from "astro/components/Image.astro";
 import NavbarMenuIcon from "../assets/menu.png";
 ---
-
 <div class="navbar">
     <a class="navbar-link" href="index.html">Home</a>
     <a class="navbar-link" href="news.html">News & Patch Notes</a>
-    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
 </div>
 <div id="toggleable-nav" class="navbar-mobile" style="display: none">
     <a class="navbar-link" href="index.html">Home</a>
     <a class="navbar-link" href="news.html">News & Patch Notes</a>
-    <a class="navbar-link" href="custom-characters.html">Custom Characters</a>
 </div>
 <Image src={NavbarMenuIcon} alt="Test" class="nav-menu-icon" id="nav-toggle" format="png"/>
 <style>
@@ -22,7 +19,7 @@ import NavbarMenuIcon from "../assets/menu.png";
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-        background: black;
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .navbar-link {
@@ -43,7 +40,7 @@ import NavbarMenuIcon from "../assets/menu.png";
         padding-bottom: 10px;
         width: 100%;
         justify-content: space-evenly;
-        background: black;
+        background: rgba(0, 0, 0, 0.7);
 
         flex-direction: column;
         align-items: center;

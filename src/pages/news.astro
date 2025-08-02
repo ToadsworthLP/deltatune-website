@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+    <div class="content">
+        <div class="info-container">
+            <h1>- VERSION 1.2.0 -</h1>
+            <p>
+                New features:
+            </p>
+            <ul>
+                <li>Added an option to move DeltaTune to another monitor</li>
+                <li>Added Streamer Mode to make DeltaTune more compatible with screen capture software by giving it a taskbar icon (for window capture compatibility) and by allowing it to be hidden behind other windows</li>
+                <li>Added Shinonome Gothic as a fallback font to add support for Japanese characters as well as some other special characters not supported by the custom font</li>
+                <li>Added Ramche as a fallback font to add support for Hangul characters</li>
+                <li>Added support for Spanish characters to the custom font</li>
+                <li>Added an option to adjust the delay before the text fades out</li>
+            </ul>
+            <p>
+                Changes:
+            </p>
+            <ul>
+                <li>Media with empty title or artist fields are now ignored</li>
+                <li>Fixed a bug relating to where the program expects its settings file to be located</li>
+                <li>Added a message box to show details about unhandled errors that would crash the program</li>
+            </ul>
+            <h1>- VERSION 1.1.0 -</h1>
+            <p>
+                New features:
+            </p>
+            <ul>
+                <li>Added position preset for the original game's display position</li>
+                <li>Automatically adjust display scale for the current resolution on first startup</li>
+            </ul>
+            <p>
+                Changes:
+            </p>
+            <ul>
+                <li>Don't hide the settings file in the file browser to hopefully reduce Windows Defender alerts</li>
+            </ul>
+            <h1>- VERSION 1.0.0 -</h1>
+            <p>
+                Initial release
+            </p>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    a {
+        color: white;
+    }
+
+    h1 {
+        font-weight: normal;
+        text-align: center;
+        margin-top: 8rem;
+    }
+
+    h2 {
+        font-weight: normal;
+    }
+
+    ul {
+        list-style-type: square;
+    }
+
+    .yellow-text {
+        color: rgb(255, 255, 0);
+    }
+
+    .content {
+        background-color: black;
+    }
+
+    .info-container {
+        margin: auto;
+        padding-bottom: 3rem;
+        width: 50%;
+        font-size:  2rem;
+    }
+
+    .text-page-content {
+        margin: auto;
+        padding-top: 2%;
+        width: 50%;
+        font-size:  2rem;
+    }
+    
+    @media only screen and (max-width: 800px) {
+        .content {
+            width: 100%;
+            margin: auto;
+        }
+
+        .text-page-content {
+            width: 90%;
+            font-size: 1.5rem;
+        }
+
+        .info-container {
+            width: 90%;
+            font-size: 1.5rem;
+        }
+
+        .description-text {
+            font-size: 1.5rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            margin-bottom: 0;
+        }
+    }
+</style>
