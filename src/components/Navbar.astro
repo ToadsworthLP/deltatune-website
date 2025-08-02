@@ -3,12 +3,12 @@ import Image from "astro/components/Image.astro";
 import NavbarMenuIcon from "../assets/menu.png";
 ---
 <div class="navbar">
-    <a class="navbar-link" href="index.html">Home</a>
-    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="/">Home</a>
+    <a class="navbar-link" href="/news">News & Patch Notes</a>
 </div>
 <div id="toggleable-nav" class="navbar-mobile" style="display: none">
-    <a class="navbar-link" href="index.html">Home</a>
-    <a class="navbar-link" href="news.html">News & Patch Notes</a>
+    <a class="navbar-link" href="/">Home</a>
+    <a class="navbar-link" href="/news">News & Patch Notes</a>
 </div>
 <Image src={NavbarMenuIcon} alt="Test" class="nav-menu-icon" id="nav-toggle" format="png"/>
 <style>
